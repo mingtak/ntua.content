@@ -1,0 +1,16 @@
+<div class="hero" tal:define="slides context/heroURL">
+
+		<div class="edu2_main_bn_wrap">
+			<div id="owl-demo-main" class="owl-carousel owl-theme">
+				<div class="item" tal:repeat="item slides">
+					<figure>
+						<img tal:attributes="src item" alt="國立臺灣藝術大學 學生事務處"/>
+						<figcaption>
+							<span>國立臺灣藝術大學 學生事務處</span>
+						</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
+
+</div>

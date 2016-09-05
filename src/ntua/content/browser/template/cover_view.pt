@@ -1,0 +1,111 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="ntua.content">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+<?python
+from plone import api
+portal = api.portal.get()
+?>
+
+     <!--Content Wrap Start-->
+     <div class="kf_content_wrap">
+      <section>
+       <div class="container">
+        <div class="row">
+         <div class="contct_wrap">
+
+<!-- portlet start -->
+           <div class="col-md-3">
+            <div class="row">
+              <!-- 插入 portlet (左) -->
+              <tal:block replace="structure provider:plone.leftcolumn" />
+            </div>
+           </div>
+<!-- portlet end -->
+
+<!-- 若無 portlet, 9改12 -->
+           <div class="col-md-9">
+            <div class="contact_heading">
+             <h4 tal:content="context/title">Title</h4>
+            </div>
+            <div class="row">
+
+
+       <!-- COURSES DETAIL TABS WRAP START -->
+       <div class="kf_courses_tabs">
+         <!-- Nav tabs -->
+         <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#all_notice" aria-controls="all_notice" role="tab" data-toggle="tab">公告總覽</a></li>
+          <li role="presentation">
+            <a href="#folder_2" aria-controls="folder_2" role="tab" data-toggle="tab">生活事務與保健組</a></li>
+          <li role="presentation">
+            <a href="#folder_3" aria-controls="folder_3" role="tab" data-toggle="tab">軍訓與生活輔導組</a></li>
+          <li role="presentation">
+            <a href="#folder_4" aria-controls="folder_4" role="tab" data-toggle="tab">課外活動指導組</a></li>
+          <li role="presentation">
+            <a href="#folder_5" aria-controls="folder_5" role="tab" data-toggle="tab">學生輔導中心</a></li>
+          <li role="presentation">
+            <a href="#folder_6" aria-controls="folder_6" role="tab" data-toggle="tab">學生生涯發展中心</a></li>            
+         </ul>
+
+         <!-- Tab panes -->
+         <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="all_notice">
+           <!-- COURSES DETAIL DES START -->
+            <div class="kf_courses_detail_des">
+<!--              <div class="course_heading">
+                <h3>公告總覽</h3>
+              </div>
+-->
+              <ul tal:define="news python:api.content.find(Type='News Item', sort_on='created', sort_order='reverse')">
+                <li tal:repeat="item news" tal:content="structure python:item.getObject().text.output" />
+              </ul>
+            </div>
+           <!-- COURSES DETAIL DES END -->
+          </div>
+
+<tal:notice define="folders python:[portal['folder_2'], portal['folder_3'], portal['folder_4'], portal['folder_5'], portal['folder_6']]"
+            repeat="folder folders">
+          <div role="tabpanel" class="tab-pane" id="folder_2" tal:attributes="id folder/id">
+           <!-- COURSES DETAIL DES START -->
+            <div class="kf_courses_detail_des">
+<!--              <div class="course_heading">
+                <h3 tal:content="folder/title">標題</h3>
+              </div>
+-->
+              <ul tal:define="news python:folder['news'].getChildNodes()">
+                <li tal:repeat="item news" tal:content="structure item/text/output" />
+              </ul>
+            </div>
+           <!-- COURSES DETAIL DES END -->
+          </div>
+</tal:notice>
+         </div>
+       </div>
+       <!-- COURSES DETAIL TABS WRAP END -->
+
+            </div>
+           </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+        <!--Content Wrap End-->
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="ntua.content">
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="ntua.content.interfaces.INtuaContentLayer"
+      />
+
+  <!-- Publish static files -->
+  <browser:resourceDirectory
+      name="ntua.content"
+      directory="static"
+      />
+
+  <browser:page
+      name="cover_view"
+      for="ntua.content.interfaces.ICover"
+      class=".views.CoverView"
+      permission="zope2.View"
+      layer="ntua.content.interfaces.INtuaContentLayer"
+      />
+
+  <browser:page
+      name="ntua_album"
+      for="*"
+      class=".views.NtuaAlbum"
+      permission="zope2.View"
+      layer="ntua.content.interfaces.INtuaContentLayer"
+      />
+
+</configure>

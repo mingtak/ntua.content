@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="ntua.content">
+
+    <browser:viewlet
+      name="hero_slide"
+      for="ntua.content.interfaces.ICover"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      template="template/hero_slide.pt"
+      class=".viewlet.HeroSlide"
+      permission="zope2.View"
+      />
+
+
+
+
+</configure>
+
+

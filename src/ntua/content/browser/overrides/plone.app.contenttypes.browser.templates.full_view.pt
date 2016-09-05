@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core"
+             tal:define="uuid context/@@uuid | nothing">
+
+     <!--Content Wrap Start-->
+     <div class="kf_content_wrap">
+      <section>
+       <div class="container">
+        <div class="row">
+         <div class="contct_wrap">
+
+<!-- portlet start -->
+           <div class="col-md-3">
+            <div class="row">
+              <!-- 插入 portlet (左) -->
+              <tal:block replace="structure provider:plone.leftcolumn" />
+            </div>
+           </div>
+<!-- portlet end -->
+
+<!-- 若無 portlet, 9改12 -->
+           <div class="col-md-9">
+            <div class="contact_heading">
+             <h4 tal:content="context/title">Title</h4>
+            </div>
+            <div class="row">
+
+  <metal:listing use-macro="context/@@listing_view/macros/content-core">
+    <!-- we don't want the dl -->
+    <metal:entries fill-slot="entries">
+      <metal:block use-macro="context/@@listing_view/macros/entries">
+        <metal:entry fill-slot="entry" tal:condition="python: item.UID != uuid">
+          <div tal:define="obj item/getObject;" tal:replace="structure obj/@@full_view_item | nothing" />
+        </metal:entry>
+      </metal:block>
+    </metal:entries>
+  </metal:listing>
+
+
+            </div>
+           </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+        <!--Content Wrap End-->
+
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>

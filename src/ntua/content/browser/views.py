@@ -22,3 +22,29 @@ class NtuaAlbum(BrowserView):
     def __call__(self):
         return self.index()
 
+
+class SearchResult(BrowserView):
+    """ Search Result
+    """
+    index = ViewPageTemplateFile('template/search_result.pt')
+
+    def __call__(self):
+        context = self.context
+        request = self.request
+        response = request.response
+        portal = api.portal.get()
+        catalog = context.portal_catalog
+
+        keyword = request.form.get('keyword')
+        if not keyword:
+            response.redirect(portal.absolute_url())
+            return
+
+        self.brain = catalog({
+            'Type':['Folder', 'Page', 'File'],
+            'SearchableText': keyword,},
+            sort_on = 'Type',
+            sort_order = 'reverse',
+        )
+
+        return self.index()

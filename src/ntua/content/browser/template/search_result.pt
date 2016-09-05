@@ -4,14 +4,17 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     lang="en"
     metal:use-macro="context/main_template/macros/master"
-    i18n:domain="plone">
+    i18n:domain="ntua.content">
 <body>
 
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
 
-
+<?python
+from plone import api
+portal = api.portal.get()
+?>
 
      <!--Content Wrap Start-->
      <div class="kf_content_wrap">
@@ -32,17 +35,20 @@
 <!-- 若無 portlet, 9改12 -->
            <div class="col-md-9">
             <div class="contact_heading">
-             <h4 tal:content="context/title">Title</h4>
+             <h4>搜尋結果如下</h4>
             </div>
             <div class="row">
 
 
-
-  <div id="parent-fieldname-text"
-      tal:condition="context/text"
-      tal:content="structure python:context.text.output_relative_to(view.context)"
-      tal:attributes="class python: toc and 'pat-autotoc' or ''" />
-
+<ul>
+    <li tal:repeat="item view/brain">
+        <a tal:content="item/Title"
+           tal:attributes="href item/getURL;
+                           target python:'_blank' if item.Type == 'File' else ''"
+           style="color:blue">
+         -- <span tal:content="item/Type"/>
+    </li>
+</ul>
 
 
 
@@ -60,3 +66,4 @@
 
 </body>
 </html>
+

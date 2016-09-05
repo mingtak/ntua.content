@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:omit-tag="">
+<div class="widget widget-search portlet portletSearch" role="search"
+    i18n:domain="plone">
+
+
+  <h2 class="portletHeader">
+        <tal:header
+           condition="not:view/data/title|nothing"
+           i18n:translate="box_search">Search</tal:header>
+        <tal:header
+           condition="view/data/title|nothing"
+           tal:content="view/data/title">Search</tal:header>
+  </h2>
+
+  <form action="/ntua/@@search_result">
+      <input type="search" name="keyword" placeholder="搜尋文字">
+  </form>
+
+</div>
+</html>

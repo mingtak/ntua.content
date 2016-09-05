@@ -17,7 +17,7 @@
 
 <!-- portlet start -->
            <div class="col-md-3">
-            <div class="row">
+            <div class="kf-sidebar">
               <!-- 插入 portlet (左) -->
               <tal:block replace="structure provider:plone.leftcolumn" />
             </div>

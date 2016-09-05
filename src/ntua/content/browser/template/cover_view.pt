@@ -25,7 +25,7 @@ portal = api.portal.get()
 
 <!-- portlet start -->
            <div class="col-md-3">
-            <div class="row">
+            <div class="kf-sidebar">
               <!-- 插入 portlet (左) -->
               <tal:block replace="structure provider:plone.leftcolumn" />
             </div>
@@ -35,7 +35,7 @@ portal = api.portal.get()
 <!-- 若無 portlet, 9改12 -->
            <div class="col-md-9">
             <div class="contact_heading">
-             <h4 tal:content="context/title">Title</h4>
+             <h3 tal:content="context/title">Title</h3>
             </div>
             <div class="row">
 
@@ -68,7 +68,10 @@ portal = api.portal.get()
               </div>
 -->
               <ul tal:define="news python:api.content.find(Type='News Item', sort_on='created', sort_order='reverse')">
-                <li tal:repeat="item news" tal:content="structure python:item.getObject().text.output" />
+                <li tal:repeat="item python:news[0:20]">
+                    <span tal:content="python:item.modified.strftime('%Y/%m/%d')" class="pull-right"/>
+                    <span tal:replace="structure python:item.getObject().text.output" />
+                </li>
               </ul>
             </div>
            <!-- COURSES DETAIL DES END -->
@@ -84,7 +87,10 @@ portal = api.portal.get()
               </div>
 -->
               <ul tal:define="news python:folder['news'].getChildNodes()">
-                <li tal:repeat="item news" tal:content="structure item/text/output" />
+                <li tal:repeat="item python:list(news)[0:20]">
+                    <span tal:content="python:item.modified().strftime('%Y/%m/%d')" class="pull-right"/>
+                    <span tal:content="structure item/text/output" />
+                </li>
               </ul>
             </div>
            <!-- COURSES DETAIL DES END -->

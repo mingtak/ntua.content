@@ -33,4 +33,12 @@
       layer="ntua.content.interfaces.INtuaContentLayer"
       />
 
+  <browser:page
+      name="search_result"
+      for="*"
+      class=".views.SearchResult"
+      permission="zope2.View"
+      layer="ntua.content.interfaces.INtuaContentLayer"
+      />
+
 </configure>

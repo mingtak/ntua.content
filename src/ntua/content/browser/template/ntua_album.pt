@@ -25,7 +25,7 @@ portal = api.portal.get()
 
 <!-- portlet start -->
            <div class="col-md-3">
-            <div class="row">
+            <div class="kf-sidebar">
               <!-- 插入 portlet (左) -->
               <tal:block replace="structure provider:plone.leftcolumn" />
             </div>
@@ -41,34 +41,34 @@ portal = api.portal.get()
 
 
 
+<section class="gallery-masonery_page gallery">
+
+ <div id="filterable-item-holder-1" tal:define="images context/getChildNodes">
+
+  <div class="filterable-item all 1 col-md-4 col-sm-6 col-xs-12" tal:repeat="image images">
+   <div class="edu_masonery_thumb">
+    <figure>
+     <img tal:attributes="src string:${image/absolute_url}/@@images/image/mini;
+                          alt image/title"/>
+
+     <a tal:attributes="href string:${image/absolute_url}/@@images/image/large" rel="prettyPhoto[gallery2]">
+       <div class="caption" tal:content="image/title">Introduction of University</div>
+     </a>
+     <a tal:attributes="href string:${image/absolute_url}/@@images/image/large" rel="prettyPhoto[gallery2]" class="zoom">
+         <i class="fa fa-search"></i>
+     </a>
 
 
 
-<ul id="filterable-item-filter-1">
-       <li><a data-value="all">所有照片</a></li>
-       <li><a data-value="1">Computer</a></li>
-       <li><a data-value="other">其他未分類</a></li>
-</ul>
 
-<tal:images define="images python:context.getChildNodes()">
-  <div id="filterable-item-holder-1" tal:repeat="item images">
-      <div class="filterable-item all 1 col-md-3 col-sm-4 col-xs-12">
-          <div class="edu_masonery_thumb">
-
-              <img tal:attributes="src string:${item/absolute_url}/@@images/image/mini; tal item/title"/>
-            <div class="caption"><a href="#">Introduction of University</a></div>
-
-            <a tal:attributes="href string:${item/absolute_url}/@@images/image/large; title item/title"
-               data-rel="prettyPhoto[gallery2]" class="zoom"><i class="fa fa-search"></i></a>
-
-          </div> 
-      </div>
+    </figure>
+   </div> 
   </div>
-</tal:images>
 
 
 
-
+ </div>
+</section>
 
 
 

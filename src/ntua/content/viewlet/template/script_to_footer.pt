@@ -1,0 +1,14 @@
+<div class="script_to_footer" style="display:none">
+
+        <!-- colorbox -->
+        <script src="/ntua/++theme++ntua.theme/js/colorbox-master/jquery.colorbox-min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+console.log('hihi');
+$(".ajax").colorbox();
+      });
+    </script>
+
+
+</div>

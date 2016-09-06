@@ -1,4 +1,4 @@
-<div class="hero" tal:define="slides context/heroURL">
+<div class="hero"  tal:define="slides context/heroURL" style="display:none">
 
 		<div class="edu2_main_bn_wrap">
 			<div id="owl-demo-main" class="owl-carousel owl-theme">

@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="ntua.content">
+
+
+<body>
+
+
+
+<!-- 成員介紹 -->
+  <metal:row define-macro="members">
+
+
+<tal:members condition="python:getattr(context, 'tags')">
+<hr>
+<h4>成員介紹</h4>
+<br>
+
+    <div class="row" tal:repeat="item context/tags">
+              
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <!-- FACULTY DES START-->
+              <div class="edu2_faculty_des">
+                <figure><img tal:attributes="src string:${item/to_object/absolute_url}/@@images/image/mini;
+                                             alt item/to_object/title">
+                  <figcaption>
+                    <a class="ajax cboxElement" tal:attributes="href string:${item/to_object/absolute_url}/@@raw_view"><i class="fa fa-search"></i></a>
+                  </figcaption>
+                </figure>
+                <div class="edu2_faculty_des2">
+                  <h6><a class="ajax cboxElement" tal:attributes="href string:${item/to_object/absolute_url}/@@raw_view" tal:content="item/to_object/title">Simon Grishaber</a></h6>
+                  <strong tal:content="item/to_object/jobTitle">Health Teacher</strong>
+                </div>
+              </div>
+              <!-- FACULTY DES END-->
+              </div>
+    </div>
+
+
+
+</tal:members>
+
+  </metal:row>
+
+
+
+
+</body>
+</html>
+

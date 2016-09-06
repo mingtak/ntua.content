@@ -1,0 +1,71 @@
+<?python
+from plone import api
+portal = api.portal.get()
+?>
+
+		<footer class="footer" style="display:none">
+			<!--EDU2 FOOTER CONTANT WRAP START-->
+				<div class="container">
+					<div class="row">
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+							<div class="widget widget-links">
+								<h5>快速連結</h5>
+								<ul>
+<li><a tal:attributes="href python:'%s/folder_1/5b7852d967038b70' % portal.absolute_url()">學務會議</a></li>
+<li><a tal:attributes="href python:'%s/folder_1/602752255e737b49655980b259d454e16703' % portal.absolute_url()">性別平等教育委員會</a></li>
+<li><a tal:attributes="href python:'%s/folder_1/copy_of_602752255e737b49655980b259d454e16703' % portal.absolute_url()">學生申訴評議委員會</a></li>
+<li><a tal:attributes="href python:'%s/folder_1/copy2_of_5b7852d967038b70' % portal.absolute_url()">學生獎懲委員會</a></li>
+<li><a tal:attributes="href python:'%s/folder_3/4e3b8fa6696d52d9/copy3_of_1' % portal.absolute_url()">請假專區</a></li>
+								</ul>
+							</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+							<div class="widget widget-links">
+								<h5>相關連結</h5>
+								<ul>
+									<li><a href="http://www.ntua.edu.tw" target="_blank">學校主網站</a></li>
+									<li><a href="mailto:andy@google.com">聯絡我們...</a></li>
+<!--									<li><a href="#">F.A.Q</a></li>
+									<li><a href="#">Serch Courses</a></li>
+									<li><a href="#">Latest Informations</a></li> -->
+								</ul>
+							</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+<div class="widget wiget-instagram"
+     tal:define="brain python:api.content.find(Type='Image', Subject='頁腳顯示', sort_on='modified', sort_order='reverse')">
+    <h5>活動花絮</h5>
+    <ul>
+        <li tal:repeat="item python:brain[0:9]">
+            <a href="#" tal:attributes="href python:item.getObject().getParentNode().absolute_url()">
+                <img tal:attributes="src string:${item/getURL}/@@images/image/thumb"/>
+            </a>
+        </li>
+    </ul>
+</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+
+						<!--EDU2 FOOTER CONTANT DES START-->
+						<div class="col-md-3">
+							<div class="widget widget-contact">
+								<h5>聯絡我們</h5>
+								<ul>
+									<li>22058 新北市板橋區大觀路1段59號</li>
+									<li>電話 : <a href="#"> 02-1234-5678</a></li>
+									<li>傳真 : <a href="#"> 02-2345-6789</a></li>
+									<li>24小時校安專線 : <a href="#"> 02-2967-4948</a></li>
+								</ul>
+							</div>
+						</div>
+						<!--EDU2 FOOTER CONTANT DES END-->
+					</div>
+				</div>
+		</footer>

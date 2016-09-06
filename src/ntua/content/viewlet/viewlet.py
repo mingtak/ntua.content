@@ -6,3 +6,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 class HeroSlide(base.ViewletBase):
     """  """
 
+class Footer(base.ViewletBase):
+    """  """
+
+class ScriptToFooter(base.ViewletBase):
+    """  """

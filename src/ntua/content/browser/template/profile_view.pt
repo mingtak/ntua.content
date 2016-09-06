@@ -4,7 +4,7 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     lang="en"
     metal:use-macro="context/main_template/macros/master"
-    i18n:domain="plone">
+    i18n:domain="ntua.content">
 <body>
 
 <metal:content-core fill-slot="content-core">
@@ -36,15 +36,12 @@
             </div>
             <div class="row">
 
-
-
+  <img tal:attributes="src string:${context/absolute_url}/@@images/image/preview" />
+  <h4 tal:content="context/jobTitle" style="padding:15px"/>
   <div id="parent-fieldname-text"
       tal:condition="context/text"
       tal:content="structure python:context.text.output_relative_to(view.context)"
       tal:attributes="class python: toc and 'pat-autotoc' or ''" />
-
-
-      <metal:macro use-macro="context/@@ntua_macro/macros/members" />
 
 
             </div>

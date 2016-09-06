@@ -23,6 +23,29 @@ class NtuaAlbum(BrowserView):
         return self.index()
 
 
+class ProfileView(BrowserView):
+    """ Profile View (for profile)
+    """
+    index = ViewPageTemplateFile('template/profile_view.pt')
+
+    def __call__(self):
+        return self.index()
+
+
+class RawView(BrowserView):
+    """ Raw View (for profile)
+    """
+    index = ViewPageTemplateFile('template/raw_view.pt')
+
+    def __call__(self):
+        return self.index()
+
+
+class NTUAMacro(BrowserView):
+    """ NTUA Macro
+    """
+
+
 class SearchResult(BrowserView):
     """ Search Result
     """

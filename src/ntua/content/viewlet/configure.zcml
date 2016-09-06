@@ -13,8 +13,23 @@
       permission="zope2.View"
       />
 
+    <browser:viewlet
+      name="footer"
+      for="*"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+      template="template/footer.pt"
+      class=".viewlet.Footer"
+      permission="zope2.View"
+      />
 
-
+    <browser:viewlet
+      name="script_to_footer"
+      for="*"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+      template="template/script_to_footer.pt"
+      class=".viewlet.ScriptToFooter"
+      permission="zope2.View"
+      />
 
 </configure>
 

@@ -41,4 +41,29 @@
       layer="ntua.content.interfaces.INtuaContentLayer"
       />
 
+  <browser:page
+      name="profile_view"
+      for="ntua.content.interfaces.IProfile"
+      class=".views.ProfileView"
+      permission="zope2.View"
+      layer="ntua.content.interfaces.INtuaContentLayer"
+      />
+
+  <browser:page
+      name="raw_view"
+      for="ntua.content.interfaces.IProfile"
+      class=".views.RawView"
+      permission="zope2.View"
+      layer="ntua.content.interfaces.INtuaContentLayer"
+      />
+
+  <browser:page
+      name="ntua_macro"
+      for="*"
+      class=".views.NTUAMacro"
+      template="template/ntua_macro.pt"
+      permission="zope2.View"
+      layer="ntua.content.interfaces.INtuaContentLayer"
+      />
+
 </configure>

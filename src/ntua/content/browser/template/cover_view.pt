@@ -67,9 +67,17 @@ portal = api.portal.get()
                 <h3>公告總覽</h3>
               </div>
 -->
-              <ul tal:define="news python:api.content.find(Type='News Item', sort_on='created', sort_order='reverse')">
+
+              <ul tal:define="news python:api.content.find(Type='News Item', sort_on='created', sort_order='reverse');
+                              unit python:{u'生活事務與保健組':'生保組',
+                                           u'軍訓與生活輔導組':'軍輔組',
+                                           u'課外活動指導組':'課指組',
+                                           u'學生輔導中心':'學輔中心',
+                                           u'學生生涯發展中心':'生涯中心',}">
                 <li tal:repeat="item python:news[0:20]">
-                    <span tal:content="python:item.modified.strftime('%Y/%m/%d')" class="pull-right"/>
+                    <span class="pull-right"
+                          tal:content="python:'%s %s' %
+                              (unit.get(item.getObject().getParentNode().getParentNode().title), item.modified.strftime('%Y/%m/%d'),)"/>
                     <span tal:replace="structure python:item.getObject().text.output" />
                 </li>
               </ul>
@@ -86,9 +94,10 @@ portal = api.portal.get()
                 <h3 tal:content="folder/title">標題</h3>
               </div>
 -->
-              <ul tal:define="news python:folder['news'].getChildNodes()">
+              <ul tal:define="newsFolder python:folder['news'];
+                              news newsFolder/@@contentlisting">
                 <li tal:repeat="item python:list(news)[0:20]">
-                    <span tal:content="python:item.modified().strftime('%Y/%m/%d')" class="pull-right"/>
+                    <span tal:content="python:item.modified.strftime('%Y/%m/%d')" class="pull-right"/>
                     <span tal:content="structure item/text/output" />
                 </li>
               </ul>

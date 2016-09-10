@@ -20,9 +20,9 @@
 <h4>成員介紹</h4>
 <br>
 
-    <div class="row" tal:repeat="item context/tags">
+    <div class="row">
               
-              <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-md-4 col-sm-6" tal:repeat="item context/tags">
                 <!-- FACULTY DES START-->
               <div class="edu2_faculty_des">
                 <figure><img tal:attributes="src string:${item/to_object/absolute_url}/@@images/image/mini;

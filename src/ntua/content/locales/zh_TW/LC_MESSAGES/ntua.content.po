@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,19 +12,33 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: ntua.content\n"
+"Domain: DOMAIN\n"
+
+msgid "Creator"
+msgstr "建立帳號"
+
+msgid "Type"
+msgstr "類型"
+
+msgid "ModificationDate"
+msgstr "最後修訂"
+
+msgid "CreationDate"
+msgstr "建立日期"
+
+####################################################
 
 #: ./profiles/default/types/Cover.xml
 msgid "Cover"
-msgstr ""
+msgstr "首頁封面"
 
 #: ./interfaces.py:23
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ./interfaces.py:28
 msgid "Hero URL"
-msgstr ""
+msgstr "首頁Slider圖檔網址"
 
 #: ./configure.zcml:22
 msgid "Installs the ntua.content add-on."
@@ -35,31 +46,31 @@ msgstr ""
 
 #: ./interfaces.py:42
 msgid "Job Title"
-msgstr ""
+msgstr "職稱"
 
 #: ./behavior/behaviors.py:20
 msgid "Members"
-msgstr ""
+msgstr "成員"
 
 #: ./profiles/default/types/Profile.xml
 msgid "Profile"
-msgstr ""
+msgstr "個人檔案"
 
 #: ./interfaces.py:47
 msgid "Profile Image"
-msgstr ""
+msgstr "個人圖像"
 
 #: ./behavior/behaviors.py:26
 msgid "Related"
-msgstr ""
+msgstr "關連的"
 
 #: ./behavior/behaviors.py:25
 msgid "Tag Members"
-msgstr ""
+msgstr "標註成員"
 
 #: ./interfaces.py:18
 msgid "Title"
-msgstr ""
+msgstr "標題"
 
 #: ./configure.zcml:31
 msgid "Uninstalls the ntua.content add-on."
@@ -75,7 +86,7 @@ msgstr ""
 
 #: ./profiles/default/types/Folder.xml
 msgid "ntua_album"
-msgstr ""
+msgstr "藝大相簿"
 
 #. Default: "Content listing"
 #: ./browser/overrides/plone.app.contenttypes.browser.templates.listing_tabular.pt:51

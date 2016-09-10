@@ -47,6 +47,7 @@ portal = api.portal.get()
                            target python:'_blank' if item.Type == 'File' else ''"
            style="color:blue">
          -- <span tal:content="item/Type"/>
+        </a>
     </li>
 </ul>
 

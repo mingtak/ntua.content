@@ -5,8 +5,7 @@
 
     <script>
       $(document).ready(function(){
-console.log('hihi');
-$(".ajax").colorbox();
+        $(".ajax").colorbox();
       });
     </script>
 

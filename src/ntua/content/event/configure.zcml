@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="ntua.content">
+
+    <subscriber
+        for="plone.app.contenttypes.interfaces.IDocument zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        handler=".event.moveContentToTop"
+        />
+
+    <subscriber
+        for="plone.app.contenttypes.interfaces.IImage zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        handler=".event.moveContentToTop"
+        />
+
+</configure>

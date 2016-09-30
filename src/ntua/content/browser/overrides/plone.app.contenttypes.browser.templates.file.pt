@@ -62,7 +62,7 @@
   </div>
 
 
-
+<p style="margin-left:20px" tal:condition="context/description"><strong>說明: </strong><span tal:content="context/description" /></p>
 
 
             </div>

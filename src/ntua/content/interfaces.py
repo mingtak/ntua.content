@@ -30,6 +30,12 @@ class ICover(Interface):
         required=False,
     )
 
+    footerVideo = schema.Text(
+        title=_(u"Footer Video"),
+        description=_(u"Youtube Video in Footer"),
+        required=True,
+    )
+
 
 class IProfile(Interface):
 

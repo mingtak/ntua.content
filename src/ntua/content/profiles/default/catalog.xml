@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+
+  <index name="outside_notice" meta_type="BooleanIndex">
+    <indexed_attr value="outside_notice" />
+  </index>
+  <column value="outside_notice"/>
+
+</object>

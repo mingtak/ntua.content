@@ -55,25 +55,22 @@ portal = api.portal.get()
           <li role="presentation">
             <a href="#folder_5" aria-controls="folder_5" role="tab" data-toggle="tab">學生輔導中心</a></li>
           <li role="presentation">
-            <a href="#folder_6" aria-controls="folder_6" role="tab" data-toggle="tab">學生生涯發展中心</a></li>            
+            <a href="#folder_6" aria-controls="folder_6" role="tab" data-toggle="tab">學生生涯發展中心</a></li>
+          <li role="presentation">
+            <a href="#outside_notice" aria-controls="outside_notice" role="tab" data-toggle="tab">校外公告</a></li>
          </ul>
 
          <!-- Tab panes -->
-         <div class="tab-content">
+         <div class="tab-content"
+              tal:define="unit python:{u'生活事務與保健組':'生保組',
+                                       u'軍訓與生活輔導組':'軍輔組',
+                                       u'課外活動指導組':'課指組',
+                                       u'學生輔導中心':'學輔中心',
+                                       u'學生生涯發展中心':'生涯中心',}">
           <div role="tabpanel" class="tab-pane active" id="all_notice">
            <!-- COURSES DETAIL DES START -->
             <div class="kf_courses_detail_des">
-<!--              <div class="course_heading">
-                <h3>公告總覽</h3>
-              </div>
--->
-
-              <ul tal:define="news python:api.content.find(Type='News Item', sort_on='created', sort_order='reverse');
-                              unit python:{u'生活事務與保健組':'生保組',
-                                           u'軍訓與生活輔導組':'軍輔組',
-                                           u'課外活動指導組':'課指組',
-                                           u'學生輔導中心':'學輔中心',
-                                           u'學生生涯發展中心':'生涯中心',}">
+              <ul tal:define="news python:api.content.find(Type='News Item', outside_notice=0, sort_on='created', sort_order='reverse')">
                 <li tal:repeat="item python:news[0:20]">
                     <span class="pull-right"
                           tal:content="python:'%s %s' %
@@ -87,13 +84,9 @@ portal = api.portal.get()
 
 <tal:notice define="folders python:[portal['folder_2'], portal['folder_3'], portal['folder_4'], portal['folder_5'], portal['folder_6']]"
             repeat="folder folders">
-          <div role="tabpanel" class="tab-pane" id="folder_2" tal:attributes="id folder/id">
+          <div role="tabpanel" class="tab-pane" tal:attributes="id folder/id">
            <!-- COURSES DETAIL DES START -->
             <div class="kf_courses_detail_des">
-<!--              <div class="course_heading">
-                <h3 tal:content="folder/title">標題</h3>
-              </div>
--->
               <ul tal:define="newsFolder python:folder['news'];
                               news newsFolder/@@contentlisting">
                 <li tal:repeat="item python:list(news)[0:20]">
@@ -105,6 +98,26 @@ portal = api.portal.get()
            <!-- COURSES DETAIL DES END -->
           </div>
 </tal:notice>
+
+
+          <div role="tabpanel" class="tab-pane" id="outside_notice">
+           <!-- COURSES DETAIL DES START -->
+            <div class="kf_courses_detail_des">
+              <ul tal:define="outside python:api.content.find(Type='News Item', outside_notice=1, sort_on='created', sort_order='reverse')">
+                <li tal:repeat="item python:outside[0:20]">
+                    <span class="pull-right"
+                          tal:content="python:'%s' % item.modified.strftime('%Y/%m/%d')"/>
+                    <span tal:replace="structure python:item.getObject().text.output" />
+                </li>
+              </ul>
+            </div>
+           <!-- COURSES DETAIL DES END -->
+          </div>
+
+
+
+
+
          </div>
        </div>
        <!-- COURSES DETAIL TABS WRAP END -->

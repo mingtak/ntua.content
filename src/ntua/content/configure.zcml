@@ -35,4 +35,7 @@
       factory=".setuphandlers.HiddenProfiles"
       name="ntua.content-hiddenprofiles" />
 
+  <!-- Adapter for catalog -->
+  <adapter name="outside_notice" factory=".catalog.outside_notice_indexer" />
+
 </configure>

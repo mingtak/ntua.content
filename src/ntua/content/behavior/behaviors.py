@@ -1,6 +1,7 @@
 from ntua.content import _
 #from plone.autoform import directives
 from plone.supermodel import directives
+from zope import schema
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope.component import adapts
@@ -32,6 +33,20 @@ class ITagMembers(model.Schema):
 alsoProvides(ITagMembers, IFormFieldProvider)
 
 
+class IOutsideNotice(model.Schema):
+    """Add outside notice for News Item
+    """
+
+    outside_notice = schema.Bool(
+        title=_(u"Outside Notice"),
+        default=False,
+        required=False,
+    )
+
+
+alsoProvides(IOutsideNotice, IFormFieldProvider)
+
+
 def context_property(name):
     def getter(self):
         return getattr(self.context, name)
@@ -51,4 +66,15 @@ class TagMembers(object):
 
     # -*- Your behavior property setters & getters here ... -*-
     tags = context_property("tags")
+
+
+class OutsideNotice(object):
+    implements(IOutsideNotice)
+    adapts(IDexterityContent)
+
+    def __init__(self,context):
+        self.context = context
+
+    # -*- Your behavior property setters & getters here ... -*-
+    outside_notice = context_property("outside_notice")
 

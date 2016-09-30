@@ -12,4 +12,11 @@
         factory=".behaviors.TagMembers"
         />
 
+    <plone:behavior
+        title="OutsideNotice"
+        description="Outside Notice."
+        provides=".behaviors.IOutsideNotice"
+        factory=".behaviors.OutsideNotice"
+        />
+
 </configure>

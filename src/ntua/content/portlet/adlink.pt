@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:omit-tag="">
+<div class="widget widget-search portlet portletAdLink"
+    i18n:domain="ntua.content">
+
+<?python
+from plone import api
+portal = api.portal.get()
+?>
+
+  <h2 class="portletHeader">
+        <span tal:replace="view/data/text" />
+  </h2>
+<tal:ad define="adLinks python:portal['resource']['adlink'].getChildNodes()">
+
+<tal:a repeat="item adLinks">
+  <a tal:condition="python:api.content.get_state(obj=item) == 'published'"
+     tal:attributes="href python:item.url; title item/Title">
+    <img tal:attributes="src string:${item/absolute_url}/@@images/image/thumb; alt item/title" style="width:42%; margin:3px" />
+  </a>
+</tal:a>
+
+</tal:ad>
+</div>
+</html>
+

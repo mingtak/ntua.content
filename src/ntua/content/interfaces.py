@@ -12,6 +12,19 @@ class INtuaContentLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 
+class IAdLink(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=True,
+    )
+
+    url = schema.URI(
+        title=_(u"URL"),
+        required=True,
+    )
+
+
 class ICover(Interface):
 
     title = schema.TextLine(

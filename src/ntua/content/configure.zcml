@@ -12,6 +12,7 @@
   <include package=".viewlet" />
   <include package=".behavior" />
   <include package=".event" />
+  <include package=".portlet" />
 
   <genericsetup:registerProfile
       name="default"

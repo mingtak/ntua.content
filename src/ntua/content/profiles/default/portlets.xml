@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<portlets
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  i18n:domain="ntua.content">
+
+  <!-- Portlet type registrations -->
+
+  <portlet
+    addview="ntua.content.portlet.AdLink"
+    title="AdLink portlet"
+    description="A portlet to rendering ad link content."
+    i18n:attributes="title;
+                    description"
+    />
+
+</portlets>

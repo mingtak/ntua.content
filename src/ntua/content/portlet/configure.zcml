@@ -1,0 +1,14 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:plone="http://namespaces.plone.org/plone">
+
+    <plone:portlet
+        name="ntua.content.portlet.AdLink"
+        interface=".adlink.IAdLink"
+        assignment=".adlink.Assignment"
+        renderer=".adlink.Renderer"
+        addview=".adlink.AddForm"
+        editview=".adlink.EditForm"
+        />
+
+</configure>

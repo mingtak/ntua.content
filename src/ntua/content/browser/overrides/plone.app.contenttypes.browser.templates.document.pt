@@ -43,10 +43,9 @@
       tal:content="structure python:context.text.output_relative_to(view.context)"
       tal:attributes="class python: toc and 'pat-autotoc' or ''" />
 
-
-      <metal:macro use-macro="context/@@ntua_macro/macros/members" />
-
-
+            </div>
+            <div class="row">
+               <metal:macro use-macro="context/@@ntua_macro/macros/members" />
             </div>
            </div>
          </div>

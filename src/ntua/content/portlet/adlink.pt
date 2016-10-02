@@ -18,7 +18,7 @@ portal = api.portal.get()
 <tal:a repeat="item adLinks">
   <a tal:condition="python:api.content.get_state(obj=item) == 'published'"
      tal:attributes="href python:item.url; title item/Title">
-    <img tal:attributes="src string:${item/absolute_url}/@@images/image/thumb; alt item/title" style="width:42%; margin:3px" />
+    <img tal:attributes="src string:${item/absolute_url}/@@images/image/thumb; alt item/title" style="width:120px; height:40px; margin:3px" />
   </a>
 </tal:a>
 

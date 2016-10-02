@@ -48,7 +48,7 @@ portal = api.portal.get()
     <ul>
         <li tal:repeat="item python:brain[0:9]">
             <a href="#" tal:attributes="href python:item.getObject().getParentNode().absolute_url()">
-                <img tal:attributes="src string:${item/getURL}/@@images/image/thumb"/>
+                <img tal:attributes="src string:${item/getURL}/@@images/image/thumb; alt item/Title"/>
             </a>
         </li>
     </ul>

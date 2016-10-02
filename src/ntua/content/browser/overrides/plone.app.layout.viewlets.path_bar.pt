@@ -53,7 +53,7 @@
             i18n:translate="you_are_here">You are here:</span>
     <ul aria-labelledby="breadcrumbs-you-are-here">
       <li class="btn btn-info pull-right">
-          <a href="#" onclick="history.back()">回上頁</a>
+          <a href="javascript:void(0);" class="return_page" title="回上頁">回上頁</a>
       </li>
       <li id="breadcrumbs-home">
         <a i18n:translate="tabs_home"

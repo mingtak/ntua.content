@@ -12,6 +12,7 @@ portal = api.portal.get()
 							<div class="widget widget-links">
 								<h5>快速連結</h5>
 								<ul>
+<li><a tal:attributes="href python:'%s/folder_2/4e3b8fa6696d52d9/2' % portal.absolute_url()">獎助學金</a></li>
 <li><a tal:attributes="href python:'%s/folder_1/5b7852d967038b70' % portal.absolute_url()">學務會議</a></li>
 <li><a tal:attributes="href python:'%s/folder_1/602752255e737b49655980b259d454e16703' % portal.absolute_url()">性別平等教育委員會</a></li>
 <li><a tal:attributes="href python:'%s/folder_1/copy_of_602752255e737b49655980b259d454e16703' % portal.absolute_url()">學生申訴評議委員會</a></li>

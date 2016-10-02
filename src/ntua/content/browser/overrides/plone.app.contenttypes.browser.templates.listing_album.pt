@@ -66,7 +66,7 @@
   <div class="visualClear"><!-- --></div>
 
   <tal:albums tal:repeat="album albums">
-    <div class="photoAlbumEntry photoAlbumFolder"
+    <div class="photoAlbumEntry photoAlbumFolder col-md-3"
         tal:define="album_ob album/getObject;
                     subalbum_view nocall:album_ob/@@album_view;
                     random_image subalbum_view/album_random_image;
@@ -77,7 +77,7 @@
         <span class="photoAlbumEntryWrapper">
           <img tal:define="random_img_ob random_image/getObject;
                            scales random_img_ob/@@images"
-               tal:replace="structure python:scales.tag(fieldname='image', scale='thumb')" />
+               tal:replace="structure python:scales.tag(fieldname='image', scale='mini')" />
         </span>
         <span class="photoAlbumEntryTitle">
           <tal:title content="album/Title">Title</tal:title>

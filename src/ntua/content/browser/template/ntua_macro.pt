@@ -25,9 +25,17 @@
               <div class="col-lg-2 col-md-2 col-sm-3" tal:repeat="item context/tags">
                 <!-- FACULTY DES START-->
               <div class="edu2_faculty_des">
-                <figure><img tal:attributes="src string:${item/to_object/absolute_url}/@@images/image/mini;
+                <figure>
+                  <tal:img tal:switch="python:hasattr(item.to_object.image, 'filename')">
+                        <div tal:case="False" style="text-align:center;">
+                          <i class="fa fa-user" style="font-size:8em;"/>
+                        </div>
+                        <img tal:case="True"
+                             tal:attributes="src string:${item/to_object/absolute_url}/@@images/image/mini;
                                              alt item/to_object/title">
-                  <figcaption>
+                  </tal:img>
+ 
+                 <figcaption>
                     <a class="ajax cboxElement" tal:attributes="href string:${item/to_object/absolute_url}/@@raw_view"><i class="fa fa-search"></i></a>
                   </figcaption>
                 </figure>

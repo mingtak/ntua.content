@@ -4,13 +4,20 @@
         <script src="/ntua/++theme++ntua.theme/js/colorbox-master/jquery.colorbox-min.js"></script>
 
     <script>
+      // 成員介紹colorbox
       $(document).ready(function(){
-        $(".ajax").colorbox({width:"40%"});
+        if($(window).width() > 800){
+            $(".ajax").colorbox({width:"40%"});
+        }else{
+            $(".ajax").colorbox({width:"90%"});
+        };
       });
 
+      // 回上一頁
       $(".return_page").click(function(){
         window.history.go(-1);
       });
+
     </script>
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->

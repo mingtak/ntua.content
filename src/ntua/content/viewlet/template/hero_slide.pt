@@ -5,9 +5,9 @@
 				<div class="item" tal:repeat="item slides">
 					<figure>
 						<img tal:attributes="src item" alt="國立臺灣藝術大學 學生事務處"/>
-						<figcaption>
+<!--						<figcaption>
 							<span>國立臺灣藝術大學 學生事務處</span>
-						</figcaption>
+						</figcaption> -->
 					</figure>
 				</div>
 			</div>

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-09-08 15:14+0000\n"
+"POT-Creation-Date: 2016-10-16 11:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,59 +17,104 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: ntua.content\n"
 
+#: ./profiles/default/portlets.xml
+msgid "A portlet to rendering ad link content."
+msgstr ""
+
+#: ./portlet/adlink.py:27
+#: ./profiles/default/types/AdLink.xml
+msgid "AdLink"
+msgstr ""
+
+#: ./profiles/default/portlets.xml
+msgid "AdLink portlet"
+msgstr ""
+
+#: ./portlet/adlink.py:43
+msgid "Add AdLink Portlet"
+msgstr ""
+
 #: ./profiles/default/types/Cover.xml
 msgid "Cover"
 msgstr ""
 
-#: ./interfaces.py:23
+#: ./interfaces.py:36
 msgid "Description"
 msgstr ""
 
-#: ./interfaces.py:28
+#: ./portlet/adlink.py:54
+msgid "Edit AdLink Portlet"
+msgstr ""
+
+#: ./interfaces.py:47
+msgid "Footer Video"
+msgstr ""
+
+#: ./interfaces.py:41
 msgid "Hero URL"
 msgstr ""
 
-#: ./configure.zcml:22
+#: ./configure.zcml:24
 msgid "Installs the ntua.content add-on."
 msgstr ""
 
-#: ./interfaces.py:42
+#: ./interfaces.py:61
 msgid "Job Title"
 msgstr ""
 
-#: ./behavior/behaviors.py:20
+#: ./behavior/behaviors.py:21
 msgid "Members"
+msgstr ""
+
+#: ./behavior/behaviors.py:41
+msgid "Outside Notice"
 msgstr ""
 
 #: ./profiles/default/types/Profile.xml
 msgid "Profile"
 msgstr ""
 
-#: ./interfaces.py:47
+#: ./interfaces.py:66
 msgid "Profile Image"
 msgstr ""
 
-#: ./behavior/behaviors.py:26
+#: ./behavior/behaviors.py:27
 msgid "Related"
 msgstr ""
 
-#: ./behavior/behaviors.py:25
+#: ./behavior/behaviors.py:26
 msgid "Tag Members"
+msgstr ""
+
+#: ./portlet/adlink.py:14
+msgid "Text"
+msgstr ""
+
+#: ./portlet/adlink.py:44
+msgid "This portlet rendering AdLink."
 msgstr ""
 
 #: ./interfaces.py:18
 msgid "Title"
 msgstr ""
 
-#: ./configure.zcml:31
+#: ./interfaces.py:23
+msgid "URL"
+msgstr ""
+
+#: ./configure.zcml:33
 msgid "Uninstalls the ntua.content add-on."
 msgstr ""
 
-#: ./configure.zcml:22
+#: ./interfaces.py:48
+msgid "Youtube Video in Footer"
+msgstr ""
+
+#: ./configure.zcml:24
 msgid "ntua.content"
 msgstr ""
 
-#: ./configure.zcml:31
+#: ./configure.zcml:33
 msgid "ntua.content (uninstall)"
 msgstr ""
 

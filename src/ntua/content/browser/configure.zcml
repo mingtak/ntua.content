@@ -58,6 +58,14 @@
       />
 
   <browser:page
+      name="raw_view"
+      for="plone.app.contenttypes.interfaces.INewsItem"
+      class=".views.RawView"
+      permission="zope2.View"
+      layer="ntua.content.interfaces.INtuaContentLayer"
+      />
+
+  <browser:page
       name="ntua_macro"
       for="*"
       class=".views.NTUAMacro"

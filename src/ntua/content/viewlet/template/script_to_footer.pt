@@ -11,7 +11,15 @@
         }else{
             $(".ajax").colorbox({width:"90%"});
         };
+
+        if($(window).width() > 800){
+            $(".iframe").colorbox({iframe:true, width:"40%", height:"80%"});
+        }else{
+            $(".iframe").colorbox({iframe:true, width:"90%", height:"90%"});
+        };
+
       });
+
 
       // 回上一頁
       $(".return_page").click(function(){

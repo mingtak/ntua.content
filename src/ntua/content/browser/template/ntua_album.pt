@@ -48,11 +48,12 @@ portal = api.portal.get()
   <div class="filterable-item all 1 col-md-4 col-sm-6 col-xs-12" tal:repeat="image images">
    <div class="edu_masonery_thumb">
     <figure>
+
      <img tal:attributes="src string:${image/absolute_url}/@@images/image/mini;
                           alt image/title"/>
 
-     <a tal:attributes="href string:${image/absolute_url}/@@images/image/large" rel="prettyPhoto[gallery2]">
-       <div class="caption" tal:content="image/title">Introduction of University</div>
+     <a tal:attributes="href string:${image/absolute_url}/@@download/image/${image/image/filename}">
+       <div class="caption" tal:content="string:下載: ${image/title}">Introduction of University</div>
      </a>
      <a tal:attributes="href string:${image/absolute_url}/@@images/image/large" rel="prettyPhoto[gallery2]" class="zoom">
          <i class="fa fa-search"></i>

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-10-16 11:56+0000\n"
+"POT-Creation-Date: 2016-11-12 02:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,6 +54,10 @@ msgstr ""
 msgid "Hero URL"
 msgstr ""
 
+#: ./behavior/behaviors.py:42
+msgid "Inside Notice"
+msgstr ""
+
 #: ./configure.zcml:24
 msgid "Installs the ntua.content add-on."
 msgstr ""
@@ -66,7 +70,7 @@ msgstr ""
 msgid "Members"
 msgstr ""
 
-#: ./behavior/behaviors.py:41
+#: ./behavior/behaviors.py:48
 msgid "Outside Notice"
 msgstr ""
 

@@ -19,4 +19,13 @@ msgstr ""
 "X-Is-Fallback-For: zh\n"
 
 msgid "ntua_album"
-msgstr "藝大相簿"
+msgstr "所有照片"
+
+#. Default: "News Item"
+#: plone.app.contenttypes/plone/app/contenttypes/profiles/default/types/News_Item.xml
+msgid "News Item"
+msgstr "最新消息"
+
+#: plone.app.contenttypes/plone/app/contenttypes/browser/configure.zcml:45
+msgid "Album view"
+msgstr "所有相簿"

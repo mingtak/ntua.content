@@ -38,5 +38,6 @@
 
   <!-- Adapter for catalog -->
   <adapter name="outside_notice" factory=".catalog.outside_notice_indexer" />
+  <adapter name="inside_notice" factory=".catalog.inside_notice_indexer" />
 
 </configure>

@@ -6,4 +6,9 @@
   </index>
   <column value="outside_notice"/>
 
+  <index name="inside_notice" meta_type="BooleanIndex">
+    <indexed_attr value="inside_notice" />
+  </index>
+  <column value="inside_notice"/>
+
 </object>

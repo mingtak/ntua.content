@@ -70,7 +70,7 @@ portal = api.portal.get()
           <div role="tabpanel" class="tab-pane active" id="all_notice">
            <!-- COURSES DETAIL DES START -->
             <div class="kf_courses_detail_des">
-              <ul tal:define="news python:api.content.find(Type='News Item', outside_notice=0, sort_on='created', sort_order='reverse')">
+              <ul tal:define="news python:api.content.find(Type='News Item', inside_notice=1, sort_on='created', sort_order='reverse')">
                 <li tal:repeat="item python:news[0:20]">
                     <span class="pull-right"
                           tal:content="python:'%s %s' %

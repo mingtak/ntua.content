@@ -34,8 +34,15 @@ alsoProvides(ITagMembers, IFormFieldProvider)
 
 
 class IOutsideNotice(model.Schema):
-    """Add outside notice for News Item
+    """ Add outside notice for News Item
+        Note: Add inside notice option
     """
+
+    inside_notice = schema.Bool(
+        title=_(u"Inside Notice"),
+        default=True,
+        required=False,
+    )
 
     outside_notice = schema.Bool(
         title=_(u"Outside Notice"),
@@ -77,4 +84,4 @@ class OutsideNotice(object):
 
     # -*- Your behavior property setters & getters here ... -*-
     outside_notice = context_property("outside_notice")
-
+    inside_notice = context_property("inside_notice")

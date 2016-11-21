@@ -1,0 +1,6 @@
+<tal:tag repeat="tag view/tags">
+    <meta tal:attributes="tag" tal:condition="python:tag.get('property') != 'og:title'"/>
+    <meta tal:attributes="content python:'%s-%s' % (tag.get('content'), u'國立臺灣藝術大學學生事務處');
+                          property python:tag.get('property')"
+          tal:condition="python:tag.get('property') == 'og:title'" tal:on-error="nothing"/>
+</tal:tag>

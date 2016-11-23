@@ -82,9 +82,9 @@ portal = api.portal.get()
            <!-- COURSES DETAIL DES END -->
           </div>
 
-<tal:notice define="folders python:[portal['folder_2'], portal['folder_3'], portal['folder_4'], portal['folder_5'], portal['folder_6']]"
+<tal:notice define="folders python:[portal.get('folder_2'), portal.get('folder_3'), portal.get('folder_4'), portal.get('folder_5'), portal.get('folder_6')]"
             repeat="folder folders">
-          <div role="tabpanel" class="tab-pane" tal:attributes="id folder/id">
+          <div role="tabpanel" class="tab-pane" tal:attributes="id folder/id" tal:on-error="nothing">
            <!-- COURSES DETAIL DES START -->
             <div class="kf_courses_detail_des">
               <ul tal:define="newsFolder python:folder['news'];

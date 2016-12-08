@@ -18,6 +18,13 @@
       />
 
   <browser:page
+      name="testzzzzz"
+      for="*"
+      class=".views.TestZZZZZ"
+      permission="cmf.ManagePortal"
+      />
+
+  <browser:page
       name="cover_view"
       for="ntua.content.interfaces.ICover"
       class=".views.CoverView"

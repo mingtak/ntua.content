@@ -3,6 +3,19 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 #from zope.component import getMultiAdapter
 from plone import api
+import transaction
+from plone.protect.interfaces import IDisableCSRFProtection
+from zope.interface import alsoProvides
+
+
+class TestZZZZZ(BrowserView):
+
+    def __call__(self):
+        request = self.request
+        portal = api.portal.get()
+        news = portal['folder_3']['news']
+        alsoProvides(request, IDisableCSRFProtection)
+        import pdb; pdb.set_trace()
 
 
 class CoverView(BrowserView):

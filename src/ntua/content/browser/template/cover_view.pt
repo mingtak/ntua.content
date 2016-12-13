@@ -70,25 +70,29 @@ portal = api.portal.get()
           <div role="tabpanel" class="tab-pane active" id="all_notice">
            <!-- COURSES DETAIL DES START -->
             <div class="kf_courses_detail_des">
-              <ul tal:define="news python:api.content.find(Type='News Item', inside_notice=1, sort_on='created', sort_order='reverse')">
-                <li tal:repeat="item python:news[0:20]">
+              <ul tal:define="news python:api.content.find(Type='News Item',
+                                                           inside_notice=1,
+                                                           sort_on='modified', sort_order='reverse')">
+                <tal:item tal:repeat="item python:news[0:20]">
+                  <li tal:condition="python:item.getObject().getParentNode().id in ['news']">
                     <span class="pull-right"
                           tal:content="python:'%s %s' %
                               (unit.get(item.getObject().getParentNode().getParentNode().title), item.modified.strftime('%Y/%m/%d'),)"/>
                     <a class="iframe" tal:attributes="href string:${item/getURL}/@@raw_view" tal:content="item/Title"/>
-                </li>
+                  </li>
+                </tal:item>
               </ul>
             </div>
            <!-- COURSES DETAIL DES END -->
           </div>
 
-<tal:notice define="folders python:[portal['folder_2'], portal['folder_3'], portal['folder_4'], portal['folder_5'], portal['folder_6']]"
+<tal:notice define="folders python:[portal.get('folder_2'), portal.get('folder_3'), portal.get('folder_4'), portal.get('folder_5'), portal.get('folder_6')]"
             repeat="folder folders">
-          <div role="tabpanel" class="tab-pane" tal:attributes="id folder/id">
+          <div role="tabpanel" class="tab-pane" tal:attributes="id folder/id" tal:on-error="nothing">
            <!-- COURSES DETAIL DES START -->
             <div class="kf_courses_detail_des">
               <ul tal:define="newsFolder python:folder['news'];
-                              news newsFolder/@@contentlisting">
+                              news python:api.content.find(context=newsFolder, Type='News Item', sort_on='modified', sort_order='reverse')">
                 <li tal:repeat="item python:list(news)[0:20]">
                     <span tal:content="python:item.modified.strftime('%Y/%m/%d')" class="pull-right"/>
                     <a class="iframe" tal:attributes="href string:${item/getURL}/@@raw_view" tal:content="structure item/Title" />
@@ -103,7 +107,7 @@ portal = api.portal.get()
           <div role="tabpanel" class="tab-pane" id="outside_notice">
            <!-- COURSES DETAIL DES START -->
             <div class="kf_courses_detail_des">
-              <ul tal:define="outside python:api.content.find(Type='News Item', outside_notice=1, sort_on='created', sort_order='reverse')">
+              <ul tal:define="outside python:api.content.find(Type='News Item', outside_notice=1, sort_on='modified', sort_order='reverse')">
                 <li tal:repeat="item python:outside[0:20]">
                     <span class="pull-right"
                           tal:content="python:'%s' % item.modified.strftime('%Y/%m/%d')"/>

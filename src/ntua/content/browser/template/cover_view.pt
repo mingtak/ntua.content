@@ -74,10 +74,11 @@ portal = api.portal.get()
                                                            inside_notice=1,
                                                            sort_on='modified', sort_order='reverse')">
                 <tal:item tal:repeat="item python:news[0:20]">
-                  <li tal:condition="python:item.getObject().getParentNode().id in ['news']">
+                  <li>
                     <span class="pull-right"
                           tal:content="python:'%s %s' %
-                              (unit.get(item.getObject().getParentNode().getParentNode().title), item.modified.strftime('%Y/%m/%d'),)"/>
+                              (unit.get(item.getObject().getParentNode().getParentNode().title, ''),
+                               item.modified.strftime('%Y/%m/%d'),)"/>
                     <a class="iframe" tal:attributes="href string:${item/getURL}/@@raw_view" tal:content="item/Title"/>
                   </li>
                 </tal:item>

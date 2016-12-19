@@ -52,7 +52,7 @@ portal = api.portal.get()
      <img tal:attributes="src string:${image/absolute_url}/@@images/image/mini;
                           alt image/title"/>
 
-     <a tal:attributes="href string:${image/absolute_url}/@@download/image/${image/image/filename}">
+     <a tal:attributes="href string:${image/absolute_url}/@@download/image/${image/image/filename}" tal:on-error="nothing">
        <div class="caption" tal:content="string:下載: ${image/title}">Introduction of University</div>
      </a>
      <a tal:attributes="href string:${image/absolute_url}/@@images/image/large" rel="prettyPhoto[gallery2]" class="zoom">

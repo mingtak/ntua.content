@@ -48,6 +48,19 @@
       &mdash; <span tal:replace="kb" /> KB</span>
   </p>
 
+  <p tal:condition="context/odtFile">
+    <a href="${context/absolute_url}/@@download/file/${context/odtFile/filename}">
+      <img tal:attributes="src view/get_mimetype_icon;
+                           alt content_type;" border="0" />
+      <tal:name tal:content="context/odtFile/filename" >Filename</tal:name>
+    </a><span>(ODF開放格式檔案)</span>
+    <span class="discreet"
+        tal:define="size context/odtFile/getSize;
+                    kb python:size/1024">
+      &mdash; <span tal:replace="kb" /> KB</span>
+  </p>
+
+
   <video tal:condition="view/is_videotype" controls="controls">
     <source tal:attributes="src download_url; type content_type"></source>
   </video>

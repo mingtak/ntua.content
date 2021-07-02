@@ -57,8 +57,9 @@ portal = api.portal.get()
 								<ul>
 									<li>22058 新北市板橋區大觀路1段59號</li>
 									<li>電話 : <a href="#"> 02-2272-2181</a></li>
-<!--									<li>傳真 : <a href="#"> 02-2345-6789</a></li> -->
 									<li>24小時校安專線 : <a href="#"> 02-2967-4948</a></li>
+                                                                        <li><a target="_blank"
+                                                                               href="mailto:osadean@ntua.edu.tw">學務長信箱：osadean@ntua.edu.tw</li>
 								</ul>
 							</div>
 						</div>

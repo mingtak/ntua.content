@@ -28,14 +28,6 @@ portal = api.portal.get()
 							<div class="widget widget-links">
 								<h5>活動影片</h5>
                                                                 <div style="padding-top:5px" tal:content="structure python:portal['cover'].footerVideo" />
-<!--								<ul>
-									<li><a href="http://www.ntua.edu.tw" target="_blank">學校主網站</a></li>
-									<li><a href="mailto:andy@google.com">聯絡我們...</a></li>
-									<li><a href="#">F.A.Q</a></li>
-									<li><a href="#">Serch Courses</a></li>
-									<li><a href="#">Latest Informations</a></li>
-								</ul>
--->
 							</div>
 						</div>
 						<!--EDU2 FOOTER CONTANT DES END-->
